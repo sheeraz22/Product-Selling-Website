@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Spectrum Creations — Art by Neurodiverse Artists</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="description"
+    content="Spectrum Creations — Handmade art and crafts by individuals on the autism spectrum.">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="icomoon/icomoon.css">
+  <link rel="stylesheet" type="text/css" href="css/vendor.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR  -->
+  <header id="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/main-logo.png" alt="Spectrum Creations Logo">
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#popular-Spectrum_Creationss">Popular</a></li>
+          <li class="has-dropdown">
+            <a href="#featured-Spectrum_Creationss">Collections <i class="bi bi-chevron-down"></i></a>
+            <ul class="dropdown">
+              <li><a href="#plasterOfParis">Plaster of Paris</a></li>
+              <li><a href="#moneyJars">Money Jars</a></li>
+              <li><a href="#paperClay">Paper Clay</a></li>
+              <li><a href="#jewellery">Jewellery</a></li>
+              <li><a href="#toteBags">Tote Bags</a></li>
+              <li><a href="#tShirts">T-Shirts</a></li>
+              <li><a href="#canvasArt">Canvas Art</a></li>
+              <li><a href="#wallHangings">Wall Hangings</a></li>
+              <li><a href="#lifestyleAccessories">Lifestyle Accessories</a></li>
+              <li><a href="#culinary">Culinary</a></li>
+              <li><a href="#electronics">Electronics</a></li>
+            </ul>
+          </li>
+          <li><a href="#special-offer">Offers</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="cart-btn" onclick="toggleCart()" aria-label="Cart">
+          <i class="bi bi-bag"></i>
+          <span class="cart-count" id="count">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!--  CART DRAWER  -->
+  <div class="cart-drawer" id="drawer">
+    <div class="cart-drawer-header">
+      <h3>Your Bag</h3>
+      <button class="cart-close" onclick="toggleCart()"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="cart-items" id="items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">Total: <strong>PKR <span id="total">0</span></strong></div>
+      <button class="btn-checkout" onclick="checkout()">Checkout <i class="bi bi-arrow-right"></i></button>
+    </div>
+  </div>
+
+  <!--  HERO / BILLBOARD  -->
+  <section id="billboard">
+    <div class="hero-container">
+      <button class="slider-btn prev" aria-label="Previous"><i class="icon icon-arrow-left"></i></button>
+
+      <div class="main-slider pattern-overlay">
+
+        <div class="slider-item">
+          <div class="hero-text">
+            <span class="hero-label">Neurodiverse Art</span>
+            <h1 class="hero-title">Welcome to<br>Spectrum<br><em>Creations</em></h1>
+            <p>Discover one-of-a-kind handmade creations crafted by individuals on the autism spectrum. Every product
+              tells a story of creativity, patience, and passion.</p>
+            <a href="#featured-Spectrum_Creationss" class="btn-hero">Explore Collection <i
+                class="bi bi-arrow-right"></i></a>
+          </div>
+          <div class="hero-image-wrap">
+            <img src="images/main-banner1.jpg" alt="Spectrum Creations Art" class="hero-img banner-image">
+            <div class="hero-badge">
+              <span class="badge-number">100%</span>
+              <span class="badge-text">Handmade</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-item">
+          <div class="hero-text">
+            <span class="hero-label">Our Collections</span>
+            <h1 class="hero-title">Unique<br>Handmade<br><em>Treasures</em></h1>
+            <p>Paintings · Jewellery · Home Decor · Tote Bags · Canvas Art — each piece crafted with love and care.</p>
+            <a href="#featured-Spectrum_Creationss" class="btn-hero">Shop Now <i class="bi bi-arrow-right"></i></a>
+          </div>
+          <div class="hero-image-wrap">
+            <img src="images/main-banner2.jpg" alt="Handmade Collections" class="hero-img banner-image">
+            <div class="hero-badge">
+              <span class="badge-number">50+</span>
+              <span class="badge-text">Products</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="slider-btn next" aria-label="Next"><i class="icon icon-arrow-right"></i></button>
+    </div>
+  </section>
+
+  <!--  POPULAR ITEMS  -->
+  <section id="popular-Spectrum_Creationss">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">Trending Now</span>
+        <h2 class="section-title"><span>Popular</span> Items</h2>
+      </div>
+
+      <div class="popular-grid">
+
+        <div class="pop-card" data-id="1">
+          <div class="pop-card-img">
+            <img src="images/POP (Plaster Of Paris)/POP on Canvas (2).jpg" alt="POP on Canvas">
+          </div>
+          <div class="pop-card-info">
+            <h4>POP on Canvas</h4>
+            <p class="pop-price">PKR 399</p>
+            <button class="add-btn" id="add-btn-1" onclick="add(1)">Add to Bag</button>
+            <div class="quantity" id="q-1" style="display:none;">
+              <button onclick="dec(1)">−</button>
+              <span id="val-1">1</span>
+              <button onclick="inc(1)">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pop-card" data-id="2">
+          <div class="pop-card-img">
+            <img src="images/POP (Plaster Of Paris)/Geometric Pots (2).jpg" alt="Geometric Pots">
+          </div>
+          <div class="pop-card-info">
+            <h4>Geometric Pots</h4>
+            <p class="pop-price">PKR 249</p>
+            <button class="add-btn" id="add-btn-2" onclick="add(2)">Add to Bag</button>
+            <div class="quantity" id="q-2" style="display:none;">
+              <button onclick="dec(2)">−</button>
+              <span id="val-2">1</span>
+              <button onclick="inc(2)">+</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--  BEST SELLING  -->
+  <section id="best-selling">
+    <div class="container">
+      <div class="best-selling-grid">
+        <div class="best-img-wrap">
+          <img src="images/Paper Clay/Bottle Flower Vase (1).jpg" alt="Artistic Bottle">
+        </div>
+        <div class="best-content">
+          <span class="section-label">Best Seller</span>
+          <h2 class="section-title text-start"><span>Best</span> Selling Item</h2>
+          <p class="author-tag">Artistic Bottle</p>
+          <h3>Creativity at Your Home</h3>
+          <p>Bring creativity into your home with our beautifully handcrafted Artistic Bottle. Designed by a talented
+            autistic artist, each piece is unique — blending color, texture, and imagination to create a stunning
+            decorative accent.</p>
+          <div class="best-price">PKR 600</div>
+          <button class="btn-primary-sc" onclick="add(1)">Add to Bag <i class="bi bi-bag-plus"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal" id="orderModal">
+    <div class="modal-box">
+
+      <h3>Enter Details</h3>
+
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="text" id="address" placeholder="Address" required>
+      <input type="text" id="mobile" placeholder="Mobile Number" required>
+
+      <button onclick="placeOrder()">Place Order</button>
+      <button onclick="closeModal()">Cancel</button>
+
+    </div>
+  </div>
+
+  <!--  FEATURED COLLECTIONS  -->
+  <section id="featured-Spectrum_Creationss">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">Some quality items</span>
+        <h2 class="section-title"><span>Featured</span> Collections</h2>
+      </div>
+
+      <ul class="tabs">
+        <li data-tab-target="#allCollections" class="active tab">All</li>
+        <li data-tab-target="#plasterOfParis" class="tab">Plaster of Paris</li>
+        <li data-tab-target="#moneyJars" class="tab">Money Jars</li>
+        <li data-tab-target="#paperClay" class="tab">Paper Clay</li>
+        <li data-tab-target="#jewellery" class="tab">Jewellery</li>
+        <li data-tab-target="#toteBags" class="tab">Tote Bags</li>
+        <li data-tab-target="#tShirts" class="tab">T-Shirts</li>
+        <li data-tab-target="#canvasArt" class="tab">Canvas Art</li>
+        <li data-tab-target="#wallHangings" class="tab">Wall Hangings</li>
+        <li data-tab-target="#lifestyleAccessories" class="tab">Lifestyle</li>
+        <li data-tab-target="#culinary" class="tab">Culinary</li>
+        <li data-tab-target="#electronics" class="tab">Electronics</li>
+      </ul>
+
+      <div class="tab-content">
+
+        <!-- All Collections -->
+        <div id="allCollections" data-tab-content class="active">
+          <div class="products-grid">
+
+            <div class="product-card" data-id="1">
+              <figure class="product-style">
+                <img src="images/POP (Plaster Of Paris)/Flower Stand.jpg" alt="Flower Stand" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Flower Stand</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 399</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/POP (Plaster Of Paris)/Geometric Pots (1).jpg" alt="Geometric Pots"
+                  class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Geometric Pots</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/POP (Plaster Of Paris)/Geometric Pot with Tray.jpg" alt="Geometric Pot with Tray"
+                  class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Geometric Pot with Tray</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/POP (Plaster Of Paris)/Plaster of Paris Tray.jpg" alt="POP Tray" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>POP Tray</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/POP (Plaster Of Paris)/Geometric Pots (2).jpg" alt="Geometric Pots 2"
+                  class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Geometric Pots II</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/POP (Plaster Of Paris)/POP Bookends.jpg" alt="POP Bookends" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>POP Bookends</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/POP (Plaster Of Paris)/POP on Canvas (1).jpg" alt="POP Canvas 1" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>POP on Canvas I</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/POP (Plaster Of Paris)/POP on Canvas (2).jpg" alt="POP Canvas 2" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>POP on Canvas II</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/Money Jar/Macrame Thread Money Jar.jpg" alt="Money Jar" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Macrame Money Jar</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/Paper Clay/Bottle Flower Vase (1).jpg" alt="Bottle Vase" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Bottle Flower Vase I</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/Paper Clay/Bottle Flower Vase (2).jpg" alt="Bottle Vase 2" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Bottle Flower Vase II</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/Paper Clay/Bottle Flower Vase (3).jpg" alt="Bottle Vase 3" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Bottle Flower Vase III</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/Paper Clay/Decorative Lamp (1).jpg" alt="Decorative Lamp" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Decorative Lamp I</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/Paper Clay/Decorative Lamp (2).jpg" alt="Decorative Lamp 2" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Decorative Lamp II</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/Paper Clay/Decorative Lamp (3).jpg" alt="Decorative Lamp 3" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Decorative Lamp III</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/Paper Clay/Decorative Pen.jpg" alt="Decorative Pen" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Decorative Pen</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/Jewellery/Wooden Jewellery.jpg" alt="Wooden Jewellery" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Wooden Jewellery</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/Tote Bags/Calligraphy Tote Bag.jpg" alt="Tote Bag" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Calligraphy Tote Bag</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/Canvas Arts/Art Canvas (1).jpg" alt="Canvas Art" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Art Canvas I</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/Canvas Arts/Art Canvas (2).jpg" alt="Canvas Art 2" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Art Canvas II</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/Canvas Arts/Embroided Canvas (1).jpg" alt="Embroidered Canvas" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Embroidered Canvas I</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/Canvas Arts/Embroided Canvas (2).jpg" alt="Embroidered Canvas 2" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Embroidered Canvas II</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/Wall Hangings/Air-Clay Wall Hanging.jpg" alt="Wall Hanging" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Air-Clay Wall Hanging</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/Lifestyle Accessories/Mug (1).jpg" alt="Mug" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Printed Mug I</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/Lifestyle Accessories/Mug (2).jpg" alt="Mug 2" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Printed Mug II</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/Lifestyle Accessories/Mug (3).jpg" alt="Mug 3" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Printed Mug III</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card">
+              <figure class="product-style">
+                <img src="images/Lifestyle Accessories/Sleepers.jpg" alt="Sleepers" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Sleepers</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Plaster of Paris -->
+        <div id="plasterOfParis" data-tab-content>
+          <div class="products-grid">
+            <div class="product-card">
+              <figure class="product-style"><img src="images/POP (Plaster Of Paris)/Flower Stand.jpg" alt="Flower Stand"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Flower Stand</h4><span>Unique POP art.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+            <div class="product-card">
+              <figure class="product-style"><img src="images/POP (Plaster Of Paris)/Geometric Pots (1).jpg"
+                  alt="Geometric Pots" class="product-item"><button class="card-add-btn" onclick="add(1)">Add to
+                  Bag</button></figure>
+              <figcaption>
+                <h4>Geometric Pots</h4><span>Unique POP art.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+            <div class="product-card">
+              <figure class="product-style"><img src="images/POP (Plaster Of Paris)/Geometric Pot with Tray.jpg"
+                  alt="Pot with Tray" class="product-item"><button class="card-add-btn" onclick="add(1)">Add to
+                  Bag</button></figure>
+              <figcaption>
+                <h4>Geometric Pot with Tray</h4><span>Unique POP art.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+            <div class="product-card">
+              <figure class="product-style"><img src="images/POP (Plaster Of Paris)/Plaster of Paris Tray.jpg"
+                  alt="POP Tray" class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>POP Tray</h4><span>Unique POP art.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+            <div class="product-card">
+              <figure class="product-style"><img src="images/POP (Plaster Of Paris)/Geometric Pots (2).jpg"
+                  alt="Geometric Pots 2" class="product-item"><button class="card-add-btn" onclick="add(1)">Add to
+                  Bag</button></figure>
+              <figcaption>
+                <h4>Geometric Pots II</h4><span>Unique POP art.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+            <div class="product-card">
+              <figure class="product-style"><img src="images/POP (Plaster Of Paris)/POP Bookends.jpg" alt="POP Bookends"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>POP Bookends</h4><span>Unique POP art.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+            <div class="product-card">
+              <figure class="product-style"><img src="images/POP (Plaster Of Paris)/POP on Canvas (1).jpg"
+                  alt="POP Canvas 1" class="product-item"><button class="card-add-btn" onclick="add(1)">Add to
+                  Bag</button></figure>
+              <figcaption>
+                <h4>POP on Canvas I</h4><span>Unique POP art.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+            <div class="product-card">
+              <figure class="product-style"><img src="images/POP (Plaster Of Paris)/POP on Canvas (2).jpg"
+                  alt="POP Canvas 2" class="product-item"><button class="card-add-btn" onclick="add(1)">Add to
+                  Bag</button></figure>
+              <figcaption>
+                <h4>POP on Canvas II</h4><span>Unique POP art.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+          </div>
+        </div>
+
+        <!-- Money Jars -->
+        <div id="moneyJars" data-tab-content>
+          <div class="products-grid">
+            <div class="product-card">
+              <figure class="product-style"><img src="images/Money Jar/Macrame Thread Money Jar.jpg" alt="Money Jar"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Macrame Money Jar</h4><span>Unique handmade jar.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+          </div>
+        </div>
+
+        <!-- Paper Clay -->
+        <div id="paperClay" data-tab-content>
+          <div class="products-grid">
+            <div class="product-card">
+              <figure class="product-style"><img src="images/Paper Clay/Bottle Flower Vase (1).jpg" alt="Vase 1"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Bottle Flower Vase I</h4><span>Paper clay art.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+            <div class="product-card">
+              <figure class="product-style"><img src="images/Paper Clay/Bottle Flower Vase (2).jpg" alt="Vase 2"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Bottle Flower Vase II</h4><span>Paper clay art.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+            <div class="product-card">
+              <figure class="product-style"><img src="images/Paper Clay/Bottle Flower Vase (3).jpg" alt="Vase 3"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Bottle Flower Vase III</h4><span>Paper clay art.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+            <div class="product-card">
+              <figure class="product-style"><img src="images/Paper Clay/Decorative Lamp (1).jpg" alt="Lamp 1"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Decorative Lamp I</h4><span>Paper clay art.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+            <div class="product-card">
+              <figure class="product-style"><img src="images/Paper Clay/Decorative Lamp (2).jpg" alt="Lamp 2"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Decorative Lamp II</h4><span>Paper clay art.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+            <div class="product-card">
+              <figure class="product-style"><img src="images/Paper Clay/Decorative Lamp (3).jpg" alt="Lamp 3"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Decorative Lamp III</h4><span>Paper clay art.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+            <div class="product-card">
+              <figure class="product-style"><img src="images/Paper Clay/Decorative Pen.jpg" alt="Decorative Pen"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Decorative Pen</h4><span>Paper clay art.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jewellery -->
+        <div id="jewellery" data-tab-content>
+          <div class="products-grid">
+            <div class="product-card">
+              <figure class="product-style"><img src="images/Jewellery/Wooden Jewellery.jpg" alt="Wooden Jewellery"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Wooden Jewellery</h4><span>Handcrafted jewellery.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tote Bags -->
+        <div id="toteBags" data-tab-content>
+          <div class="products-grid">
+            <div class="product-card">
+              <figure class="product-style"><img src="images/Tote Bags/Calligraphy Tote Bag.jpg" alt="Tote Bag"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Calligraphy Tote Bag</h4><span>Handmade tote bag.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+          </div>
+        </div>
+
+        <!-- T-Shirts -->
+        <div id="tShirts" data-tab-content>
+          <div class="products-grid">
+            <div class="product-card">
+              <figure class="product-style"><img src="images/T-Shirts/" alt="T-Shirts" class="product-item"><button
+                  class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Printed T-Shirts</h4><span>Unique handmade prints.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+          </div>
+        </div>
+
+        <!-- Canvas Art -->
+        <div id="canvasArt" data-tab-content>
+          <div class="products-grid">
+            <div class="product-card">
+              <figure class="product-style"><img src="images/Canvas Arts/Art Canvas (1).jpg" alt="Canvas 1"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Art Canvas I</h4><span>Original canvas art.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+            <div class="product-card">
+              <figure class="product-style"><img src="images/Canvas Arts/Art Canvas (2).jpg" alt="Canvas 2"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Art Canvas II</h4><span>Original canvas art.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+            <div class="product-card">
+              <figure class="product-style"><img src="images/Canvas Arts/Embroided Canvas (1).jpg" alt="Embroided 1"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Embroidered Canvas I</h4><span>Original canvas art.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+            <div class="product-card">
+              <figure class="product-style"><img src="images/Canvas Arts/Embroided Canvas (2).jpg" alt="Embroided 2"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Embroidered Canvas II</h4><span>Original canvas art.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wall Hangings -->
+        <div id="wallHangings" data-tab-content>
+          <div class="products-grid">
+            <div class="product-card">
+              <figure class="product-style"><img src="images/Wall Hangings/Air-Clay Wall Hanging.jpg" alt="Wall Hanging"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Air-Clay Wall Hanging</h4><span>Unique wall art.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lifestyle Accessories -->
+        <div id="lifestyleAccessories" data-tab-content>
+          <div class="products-grid">
+            <div class="product-card">
+              <figure class="product-style"><img src="images/Lifestyle Accessories/Mug (1).jpg" alt="Mug 1"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Printed Mug I</h4><span>Lifestyle accessory.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+            <div class="product-card">
+              <figure class="product-style"><img src="images/Lifestyle Accessories/Mug (2).jpg" alt="Mug 2"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Printed Mug II</h4><span>Lifestyle accessory.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+            <div class="product-card">
+              <figure class="product-style"><img src="images/Lifestyle Accessories/Mug (3).jpg" alt="Mug 3"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Printed Mug III</h4><span>Lifestyle accessory.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+            <div class="product-card">
+              <figure class="product-style"><img src="images/Lifestyle Accessories/Sepian.jpg" alt="Sepian"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Sepian</h4><span>Lifestyle accessory.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+            <div class="product-card">
+              <figure class="product-style"><img src="images/Lifestyle Accessories/Sleepers.jpg" alt="Sleepers"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Sleepers</h4><span>Lifestyle accessory.</span>
+                <div class="item-price">PKR</div>
+              </figcaption>
+            </div>
+          </div>
+        </div>
+
+        <!-- Culinary / Electronics (empty placeholders) -->
+        <div id="culinary" data-tab-content>
+          <div class="products-grid">
+            <p style="padding:40px;color:#999;">Coming Soon</p>
+          </div>
+        </div>
+        <div id="electronics" data-tab-content>
+          <div class="products-grid">
+            <p style="padding:40px;color:#999;">Coming Soon</p>
+          </div>
+        </div>
+
+      </div><!-- /tab-content -->
+    </div>
+  </section>
+
+  <!--  SPECIAL OFFERS  -->
+  <section id="special-offer">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">Grab your opportunity</span>
+        <h2 class="section-title"><span>Items</span> with Offer</h2>
+      </div>
+      <div class="offers-grid">
+
+        <div class="offer-card">
+          <figure class="product-style">
+            <img src="images/POP (Plaster Of Paris)/Geometric Pots (2).jpg" alt="Flower Bucket" class="product-item">
+            <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+          </figure>
+          <figcaption>
+            <h4>Flower Bucket</h4>
+            <div class="offer-price"><span class="prev-price">PKR 299</span> PKR 199</div>
+          </figcaption>
+        </div>
+
+        <div class="offer-card">
+          <figure class="product-style">
+            <img src="images/Paper Clay/Decorative Lamp (3).jpg" alt="Decorative Lamp" class="product-item">
+            <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+          </figure>
+          <figcaption>
+            <h4>Decorative Lamp</h4>
+            <div class="offer-price"><span class="prev-price">PKR 400</span> PKR 300</div>
+          </figcaption>
+        </div>
+
+        <div class="offer-card">
+          <figure class="product-style">
+            <img src="images/Wall Hangings/Air-Clay Wall Hanging.jpg" alt="Wall Hanging" class="product-item">
+            <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+          </figure>
+          <figcaption>
+            <h4>Air-Clay Wall Hanging</h4>
+            <div class="offer-price"><span class="prev-price">PKR 300</span> PKR 200</div>
+          </figcaption>
+        </div>
+
+        <div class="offer-card">
+          <figure class="product-style">
+            <img src="images/Lifestyle Accessories/Mug (3).jpg" alt="Printed Mug" class="product-item">
+            <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+          </figure>
+          <figcaption>
+            <h4>Printed Mug</h4>
+            <div class="offer-price"><span class="prev-price">PKR 799</span> PKR 600</div>
+          </figcaption>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--  ABOUT  -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left">
+          <span class="section-label">Who We Are</span>
+          <h2 class="section-title text-start"><span>About</span> Us</h2>
+          <div class="about-divider"></div>
+          <p><strong>Spectrum Creations</strong> is a social enterprise dedicated to showcasing the incredible artistic
+            talents of individuals on the autism spectrum.</p>
+          <p>We believe in providing a platform for neurodiverse voices to shine through art and handmade crafts. Our
+            mission is to promote inclusion, provide meaningful employment, and break stereotypes through creativity.
+          </p>
+          <div class="vision-box">
+            <i class="bi bi-eye-fill"></i>
+            <div>
+              <h5>Our Vision</h5>
+              <p>A world where every neurodiverse artist is empowered to share their gifts with confidence.</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-right">
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="stat-num">50+</span>
+              <span class="stat-label">Unique Products</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Handmade</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">∞</span>
+              <span class="stat-label">Creativity</span>
+            </div>
+            <div class="stat-card highlight">
+              <span class="stat-num">❤</span>
+              <span class="stat-label">Made with Love</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  CONTACT  -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-image">
+          <img src="images/contactus.png" alt="Contact Us" class="floating-animation">
+        </div>
+
+        <div class="contact-info-box">
+          <span class="section-label">Get In Touch</span>
+          <h2 class="section-title text-start"><span>Have</span> Questions?</h2>
+
+          <div class="contact-info-list">
+            <div class="info-item">
+              <div class="info-icon"><i class="bi bi-envelope-fill"></i></div>
+              <div class="info-text">
+                <h6>Email Us</h6>
+                <a href="mailto:sheerazs451@gmail.com">sheerazs451@gmail.com</a>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="bi bi-telephone-fill"></i></div>
+              <div class="info-text">
+                <h6>Call / WhatsApp</h6>
+                <a href="tel:+923062842873">+92 306 2842873</a>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+              <div class="info-text">
+                <h6>Visit Our Center</h6>
+                <p>C-ARTS, ST-31, Block-15, Gulistan-e-Johar, Karachi</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="bi bi-globe"></i></div>
+              <div class="info-text">
+                <h6>Official Website</h6>
+                <a href="https://www.carts.org.pk/" target="_blank">www.carts.org.pk</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.330084478817!2d67.1186714!3d24.9123018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338e555555555%3A0x6b87654321fedcba!2sC-ARTS!5e0!3m2!1sen!2s!4v1713264446000"
+          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!--  FOOTER  -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="images/main-logo.png" alt="Spectrum Creations" class="footer-logo">
+          <p>Your purchase supports artists on the autism spectrum, providing meaningful work and raising awareness
+            about neurodiversity through creativity.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>About Us</h5>
+          <ul>
+            <li><a href="#">Our Vision</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Donate</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Discover</h5>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#featured-Spectrum_Creationss">Collections</a></li>
+            <li><a href="#special-offer">Offers</a></li>
+            <li><a href="#about">Artists</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 <strong>Spectrum Creations</strong> — Empowering Neurodiverse Artists</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+
+  <script>
+    //  TABS 
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', function () {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('[data-tab-content]').forEach(c => c.classList.remove('active'));
+        this.classList.add('active');
+        const target = document.querySelector(this.dataset.tabTarget);
+        if (target) target.classList.add('active');
+      });
+    });
+
+    //  DROPDOWN NAV LINKS 
+    document.querySelectorAll('.dropdown a').forEach(item => {
+      item.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = this.getAttribute('href');
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('[data-tab-content]').forEach(c => c.classList.remove('active'));
+        const relatedTab = document.querySelector(`.tab[data-tab-target="${target}"]`);
+        if (relatedTab) relatedTab.classList.add('active');
+        const section = document.querySelector(target);
+        if (section) { section.classList.add('active'); section.scrollIntoView({ behavior: 'smooth' }); }
+        // close mobile menu
+        document.getElementById('navMenu').classList.remove('open');
+        document.getElementById('navOverlay').classList.remove('show');
+        document.getElementById('hamburger').classList.remove('active');
+      });
+    });
+
+    //  HAMBURGER 
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const navOverlay = document.getElementById('navOverlay');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('open');
+      navOverlay.classList.toggle('show');
+    });
+
+    navOverlay.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('open');
+      navOverlay.classList.remove('show');
+    });
+
+    // Close menu on scroll
+    window.addEventListener('scroll', () => {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('open');
+      navOverlay.classList.remove('show');
+    });
+
+    //  CART 
+    const prices = { 1: 399, 2: 249 };
+    let cart = JSON.parse(localStorage.getItem("cart")) || {};
+
+    function save() { localStorage.setItem("cart", JSON.stringify(cart)); }
+
+    function update(id, type) {
+      let qty = cart[id] || 0;
+      if (type === "inc") qty++;
+      if (type === "dec") qty--;
+      if (qty <= 0) delete cart[id];
+      else cart[id] = qty;
+      save(); render(); sync();
+    }
+
+    function add(id) {
+      update(id, "inc");
+      const qEl = document.getElementById("q-" + id);
+      const btnEl = document.querySelector(`[data-id="${id}"] .add-btn`);
+      if (qEl) qEl.style.display = "flex";
+      if (btnEl) btnEl.style.display = "none";
+    }
+
+    function inc(id) { update(id, "inc"); }
+
+    function dec(id) {
+      update(id, "dec");
+      if (!cart[id]) {
+        const qEl = document.getElementById("q-" + id);
+        const btnEl = document.querySelector(`[data-id="${id}"] .add-btn`);
+        if (qEl) qEl.style.display = "none";
+        if (btnEl) btnEl.style.display = "inline-flex";
+      }
+    }
+
+    function removeItem(id) { delete cart[id]; save(); render(); sync(); }
+
+    function toggleCart() { document.getElementById("drawer").classList.toggle("open"); }
+
+    function render() {
+      let box = document.getElementById("items");
+      let total = 0, count = 0;
+      box.innerHTML = "";
+      for (let id in cart) {
+        let qty = cart[id], price = prices[id] || 0;
+        total += qty * price; count += qty;
+        box.innerHTML += `<div class="cart-item"><div><strong>Item ${id}</strong> × ${qty}<div class="cart-remove" onclick="removeItem(${id})"><i class="bi bi-trash3"></i> Remove</div></div><span>PKR ${qty * price}</span></div>`;
+      }
+      document.getElementById("total").innerText = total;
+      document.getElementById("count").innerText = count;
+      if (count === 0) box.innerHTML = `<div class="cart-empty"><i class="bi bi-bag-x"></i><p>Your bag is empty</p></div>`;
+    }
+
+    function sync() {
+      for (let id in cart) {
+        const q = document.getElementById("q-" + id);
+        const v = document.getElementById("val-" + id);
+        const btn = document.querySelector(`[data-id="${id}"] .add-btn`);
+        if (q) q.style.display = "flex";
+        if (v) v.innerText = cart[id];
+        if (btn) btn.style.display = "none";
+      }
+    }
+
+    function checkout() {
+      if (Object.keys(cart).length === 0) {
+        alert("Cart is empty");
+        return;
+      }
+
+      document.getElementById("orderModal").style.display = "flex";
+    }
+
+    function placeOrder() {
+
+      let name = document.getElementById("name").value;
+      let address = document.getElementById("address").value;
+      let mobile = document.getElementById("mobile").value;
+
+      if (!name || !address || !mobile) {
+        alert("Please fill all fields");
+        return;
+      }
+
+      // ✅ Generate Order Number
+      let orderNo = "ORD-" + Date.now();
+
+      // ✅ Order Data Object
+      let order = {
+        orderNo,
+        name,
+        address,
+        mobile,
+        items: cart,
+        total: document.getElementById("total").innerText
+      };
+
+      console.log(order); // backend ke liye ready
+
+      alert(`Order Placed 🎉\nOrder No: ${orderNo}`);
+
+      // reset
+      clearForm();
+      cart = {};
+      save();
+      render();
+      closeModal();
+      toggleCart();
+    }
+
+    function clearForm() {
+      document.querySelectorAll("#orderModal input").forEach(input => {
+        input.value = "";
+      });
+    }
+
+    function closeModal() {
+      document.getElementById("orderModal").style.display = "none";
+    }
+
+    // function checkout() {
+    //   alert("Order placed successfully 🎉");
+    //   cart = {}; save(); render(); toggleCart();
+    // }
+
+    // sync(); render();
+
+    //  SLICK SLIDER (if available) 
+    if (typeof $ !== 'undefined' && $.fn.slick) {
+      $('.main-slider').slick({
+        slidesToShow: 1, slidesToScroll: 1, autoplay: true, autoplaySpeed: 5000,
+        prevArrow: '.slider-btn.prev', nextArrow: '.slider-btn.next', fade: true
+      });
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Content goes here -->
+
+  <style>
+    /* body {
+      font-family: Arial;
+      margin: 0;
+      background: #f5f5f5;
+    } */
+
+    /* ===== PRODUCT GRID ===== */
+    .products {
+      display: flex;
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .product {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      width: 200px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    /* ZOOM EFFECT (DARAZ STYLE) */
+    .product img {
+      width: 100%;
+      transition: 0.3s;
+      border-radius: 8px;
+    }
+
+    .product img:hover {
+      transform: scale(1.1);
+    }
+
+    .add-btn {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: #2196f3;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* QUANTITY */
+    .quantity {
+      display: none;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .quantity button {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      border: none;
+      background: #333;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* ===== CART ICON ===== */
+    .cart-icon {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      width: 50px;
+      height: 50px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .badge {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background: red;
+      color: #fff;
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 50%;
+    }
+
+    /* ===== CART DRAWER (DARAZ STYLE) ===== */
+    .drawer {
+      position: fixed;
+      top: 0;
+      right: -400px;
+      width: 350px;
+      height: 100%;
+      background: #fff;
+      box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+      transition: 0.3s;
+    }
+
+    .drawer.open {
+      right: 0;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .remove {
+      color: red;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    /* FOOTER */
+    .footer {
+      margin-top: auto;
+      border-top: 1px solid #eee;
+      padding-top: 10px;
+    }
+
+    .checkout {
+      width: 100%;
+      padding: 12px;
+      background: green;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+  </head>
+
+  <body>
+
+    <!-- CART ICON -->
+    <div class="cart-icon" onclick="toggleCart()">
+      🛒
+      <span class="badge" id="count">0</span>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="products">
+
+      <div class="product" data-id="1">
+        <img src="images/POP (Plaster Of Paris)/POP on Canvas (2).jpg" />
+        <h4>POP on Canvas</h4>
+        <p>Price 399Rs</p>
+
+        <button class="add-btn" onclick="add(1)">Add to Cart</button>
+
+        <div class="quantity" id="q-1">
+          <button onclick="dec(1)">-</button>
+          <span id="val-1">1</span>
+          <button onclick="inc(1)">+</button>
+        </div>
+      </div>
+
+      <div class="product" data-id="2">
+        <img src="images/POP (Plaster Of Paris)/Geometric Pots (2).jpg" />
+        <h4>Geometric Pots</h4>
+        <p>Price 249Rs</p>
+
+        <button class="add-btn" onclick="add(2)">Add to Cart</button>
+
+        <div class="quantity" id="q-2">
+          <button onclick="dec(2)">-</button>
+          <span id="val-2">1</span>
+          <button onclick="inc(2)">+</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CART DRAWER -->
+    <div class="drawer" id="drawer">
+
+      <div class="header">
+        <h3>Your Cart</h3>
+        <button onclick="toggleCart()">✖</button>
+      </div>
+
+      <div id="items"></div>
+
+      <div class="footer">
+        <h3>Total: PKR <span id="total">0</span></h3>
+        <button class="checkout" onclick="checkout()">Checkout</button>
+      </div>
+
+    </div>
+
+    <script>
+
+      const prices = { 1: 399, 2: 249 };
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || {};
+
+      function save() {
+        localStorage.setItem("cart", JSON.stringify(cart));
+      }
+
+      function update(id, type) {
+
+        let qty = cart[id] || 0;
+
+        if (type === "inc") qty++;
+        if (type === "dec") qty--;
+
+        if (qty <= 0) delete cart[id];
+        else cart[id] = qty;
+
+        save();
+        render();
+        sync();
+      }
+
+      /* ADD */
+      function add(id) {
+        update(id, "inc");
+        document.getElementById("q-" + id).style.display = "flex";
+        document.querySelector(`[data-id="${id}"] .add-btn`).style.display = "none";
+      }
+
+      /* INC */
+      function inc(id) {
+        update(id, "inc");
+      }
+
+      /* DEC */
+      function dec(id) {
+        update(id, "dec");
+
+        if (!cart[id]) {
+          document.getElementById("q-" + id).style.display = "none";
+          document.querySelector(`[data-id="${id}"] .add-btn`).style.display = "inline-block";
+        }
+      }
+
+      /* REMOVE ITEM (NEW) */
+      function removeItem(id) {
+        delete cart[id];
+        save();
+        render();
+        sync();
+      }
+
+      /* DRAWER */
+      function toggleCart() {
+        document.getElementById("drawer").classList.toggle("open");
+      }
+
+      /* RENDER CART */
+      function render() {
+
+        let box = document.getElementById("items");
+        let total = 0;
+        let count = 0;
+
+        box.innerHTML = "";
+
+        for (let id in cart) {
+          let qty = cart[id];
+          let price = prices[id];
+
+          total += qty * price;
+          count += qty;
+
+          box.innerHTML += `
+      <div class="item">
+        <div>
+          Item ${id} x ${qty}
+          <div class="remove" onclick="removeItem(${id})">Remove</div>
+        </div>
+        <span>PKR ${qty * price}</span>
+      </div>
+    `;
+        }
+
+        document.getElementById("total").innerText = total;
+        document.getElementById("count").innerText = count;
+
+        if (count === 0) {
+          box.innerHTML = "Cart is empty";
+        }
+      }
+
+      /* SYNC UI */
+      function sync() {
+        for (let id in cart) {
+          let q = document.getElementById("q-" + id);
+          let v = document.getElementById("val-" + id);
+          let btn = document.querySelector(`[data-id="${id}"] .add-btn`);
+
+          if (q) q.style.display = "flex";
+          if (v) v.innerText = cart[id];
+          if (btn) btn.style.display = "none";
+        }
+      }
+
+      /* CHECKOUT */
+      function checkout() {
+        alert("Order placed successfully 🎉");
+        cart = {};
+        save();
+        render();
+        toggleCart();
+      }
+
+      /* INIT */
+      sync();
+      render();
+
+    </script>
+
+
+
+
+
+
+    <footer>
+      <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+  </body>
+
+</html>
