@@ -1729,3 +1729,42 @@ section {
 .text-accent {
   color: var(--accent) !important;
 }
+
+/* ============================================================
+   MOBILE DROPDOWN FIX — Collections expands downward
+   ============================================================ */
+@media (max-width: 768px) {
+    
+    /* Make Collections a toggle, not hover-based */
+    .nav-links .has-dropdown .dropdown {
+        display: none !important;
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        box-shadow: none !important;
+        background: #f0f9ff !important;
+        border-left: 3px solid var(--primary) !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        left: auto !important;
+    }
+
+    /* Show dropdown when parent has 'open' class */
+    .nav-links .has-dropdown.open .dropdown {
+        display: block !important;
+    }
+
+    .nav-links .dropdown li a {
+        padding: 12px 20px 12px 32px !important;
+        font-size: 13px !important;
+        color: var(--primary) !important;
+        border-bottom: 1px solid rgba(45,151,185,0.1) !important;
+    }
+
+    .nav-links .dropdown li a:hover {
+        padding-left: 40px !important;
+        background: rgba(45,151,185,0.05) !important;
+    }
+}

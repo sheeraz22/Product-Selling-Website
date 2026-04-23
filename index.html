@@ -1126,21 +1126,39 @@
     });
 
     //  HAMBURGER 
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('navMenu');
-    const navOverlay = document.getElementById('navOverlay');
+    // ===== HAMBURGER =====
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+const navOverlay = document.getElementById('navOverlay');
 
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navMenu.classList.toggle('open');
-      navOverlay.classList.toggle('show');
-    });
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('open');
+    navOverlay.classList.toggle('show');
+});
 
-    navOverlay.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      navMenu.classList.remove('open');
-      navOverlay.classList.remove('show');
+navOverlay.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('open');
+    navOverlay.classList.remove('show');
+});
+
+window.addEventListener('scroll', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('open');
+    navOverlay.classList.remove('show');
+});
+
+// ===== MOBILE COLLECTIONS DROPDOWN TOGGLE =====
+document.querySelectorAll('.has-dropdown > a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const parent = this.closest('.has-dropdown');
+            parent.classList.toggle('open');
+        }
     });
+});
 
     // Close menu on scroll
     window.addEventListener('scroll', () => {
