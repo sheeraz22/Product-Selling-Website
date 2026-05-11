@@ -27,13 +27,13 @@
   <!-- NAVBAR  -->
   <header id="site-header">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">
-        <img src="images/main-logo.png" alt="Spectrum Creations Logo">
+      <a href="index.html" class="nav-logo" aria-label="Spectrum Creations — Home">
+        <img src="images/main-logo.png" alt="" decoding="async">
       </a>
 
-      <nav class="nav-menu" id="navMenu">
+      <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
         <ul class="nav-links">
-          <li><a href="#">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="#popular-Spectrum_Creationss">Popular</a></li>
           <li class="has-dropdown">
             <a href="#featured-Spectrum_Creationss">Collections <i class="bi bi-chevron-down"></i></a>
@@ -52,6 +52,7 @@
             </ul>
           </li>
           <li><a href="#special-offer">Offers</a></li>
+          <li><a href="#reviews">Reviews</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -182,7 +183,7 @@
   <section id="best-selling">
     <div class="container">
       <div class="best-selling-grid">
-        <div class="best-img-wrap">
+        <div class="best-img-wrap" data-id="3" role="button" tabindex="0" aria-label="View product images">
           <img src="images/Paper Clay/Bottle Flower Vase (1).jpg" alt="Artistic Bottle">
         </div>
         <div class="best-content">
@@ -193,8 +194,7 @@
           <p>Bring creativity into your home with our beautifully handcrafted Artistic Bottle. Designed by a talented
             autistic artist, each piece is unique — blending color, texture, and imagination to create a stunning
             decorative accent.</p>
-          <div class="best-price">PKR 600</div>
-          <button class="btn-primary-sc" onclick="add(1)">Add to Bag <i class="bi bi-bag-plus"></i></button>
+          <button class="btn-primary-sc" onclick="add(3)">Add to Bag <i class="bi bi-bag-plus"></i></button>
         </div>
       </div>
     </div>
@@ -212,6 +212,41 @@
       <button onclick="placeOrder()">Place Order</button>
       <button onclick="closeModal()">Cancel</button>
 
+    </div>
+  </div>
+
+  <!-- PRODUCT QUICK VIEW (multi-image gallery) -->
+  <div class="modal product-modal" id="productModal" aria-hidden="true">
+    <div class="product-modal-box" role="dialog" aria-modal="true" aria-labelledby="pmTitle">
+      <button class="pm-close" type="button" onclick="closeProductModal()" aria-label="Close">
+        <i class="bi bi-x-lg"></i>
+      </button>
+
+      <div class="pm-grid">
+        <div class="pm-gallery">
+          <div class="pm-main" id="pmMainWrap" role="button" tabindex="0"
+            aria-label="Main product photo. Activate to show additional views.">
+            <img id="pmMainImg" src="" alt="" />
+          </div>
+          <p class="pm-gallery-hint" id="pmGalleryHint">Click the image to show more views</p>
+          <div class="pm-extra-thumbs pm-extra-thumbs-hidden" id="pmExtraThumbs"
+            aria-label="Additional product images"></div>
+        </div>
+
+        <div class="pm-info">
+          <span class="pm-badge">Handmade • Unique</span>
+          <h3 id="pmTitle">Product</h3>
+          <p id="pmDesc" class="pm-desc">Handmade with love by neurodiverse creators.</p>
+          <div class="pm-price" id="pmPrice"></div>
+
+          <div class="pm-actions">
+            <button class="pm-add" id="pmAddBtn" type="button">
+              Add to Bag <i class="bi bi-bag-plus"></i>
+            </button>
+            <button class="pm-secondary" type="button" onclick="closeProductModal()">Continue Shopping</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -244,7 +279,7 @@
         <div id="allCollections" data-tab-content class="active">
           <div class="products-grid">
 
-            <div class="product-card" data-id="1">
+            <div class="product-card">
               <figure class="product-style">
                 <img src="images/POP (Plaster Of Paris)/Flower Stand.jpg" alt="Flower Stand" class="product-item">
                 <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
@@ -265,7 +300,7 @@
               <figcaption>
                 <h4>Geometric Pots</h4>
                 <span>Handmade with love by neurodiverse creators.</span>
-                <div class="item-price">PKR</div>
+                <div class="item-price">PKR 400</div>
               </figcaption>
             </div>
 
@@ -939,6 +974,55 @@
     </div>
   </section>
 
+  <!-- ========== REVIEWS ========== -->
+<section id="reviews">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">What Customers Say</span>
+      <h2 class="section-title"><span>Customer</span> Reviews</h2>
+    </div>
+    <div class="reviews-grid">
+ 
+      <div class="review-card">
+        <div class="review-avatar">
+          <div class="avatar-placeholder">A</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Absolutely beautiful handmade products! The POP on Canvas I ordered exceeded my expectations. You can feel the love and effort put into every piece. Will definitely order again!"</p>
+        <div class="review-author">
+          <strong>Amna Khalid</strong>
+          <span>Karachi, Pakistan · 12/03/25</span>
+        </div>
+      </div>
+ 
+      <div class="review-card featured">
+        <div class="review-avatar">
+          <div class="avatar-placeholder">Z</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I bought the Bottle Flower Vase as a gift and everyone loved it! Knowing it was made by an autistic artist made it even more special. Spectrum Creations is doing amazing work."</p>
+        <div class="review-author">
+          <strong>Zara Ahmed</strong>
+          <span>Islamabad, Pakistan · 05/01/25</span>
+        </div>
+      </div>
+ 
+      <div class="review-card">
+        <div class="review-avatar">
+          <div class="avatar-placeholder">M</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The tote bag I ordered has stunning calligraphy. Fast delivery, great packaging, and a truly unique product. I love that my purchase supports such a meaningful cause!"</p>
+        <div class="review-author">
+          <strong>Mohammad Bilal</strong>
+          <span>Lahore, Pakistan · 28/02/25</span>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+
   <!--  ABOUT  -->
   <section id="about">
     <div class="container">
@@ -1002,14 +1086,14 @@
               <div class="info-icon"><i class="bi bi-envelope-fill"></i></div>
               <div class="info-text">
                 <h6>Email Us</h6>
-                <a href="mailto:sheerazs451@gmail.com">sheerazs451@gmail.com</a>
+                <a href="mailto:example@gmail.com">example@gmail.com</a>
               </div>
             </div>
             <div class="info-item">
               <div class="info-icon"><i class="bi bi-telephone-fill"></i></div>
               <div class="info-text">
                 <h6>Call / WhatsApp</h6>
-                <a href="tel:+923062842873">+92 306 2842873</a>
+                <a href="tel:###########">############</a>
               </div>
             </div>
             <div class="info-item">
@@ -1041,46 +1125,33 @@
   <!--  FOOTER  -->
   <footer id="footer">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-top">
         <div class="footer-brand">
-          <img src="images/main-logo.png" alt="Spectrum Creations" class="footer-logo">
+          <a href="index.html" class="footer-logo-link">
+            <img src="images/main-logo.png" alt="Spectrum Creations" class="footer-logo">
+          </a>
           <p>Your purchase supports artists on the autism spectrum, providing meaningful work and raising awareness
             about neurodiversity through creativity.</p>
-          <div class="footer-socials">
-            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-            <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <div class="footer-nav-col">
+            <h5>Shop</h5>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#popular-Spectrum_Creationss">Popular</a></li>
+              <li><a href="#featured-Spectrum_Creationss">Collections</a></li>
+              <li><a href="#special-offer">Offers</a></li>
+            </ul>
           </div>
-        </div>
-
-        <div class="footer-col">
-          <h5>About Us</h5>
-          <ul>
-            <li><a href="#">Our Vision</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Donate</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h5>Discover</h5>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#featured-Spectrum_Creationss">Collections</a></li>
-            <li><a href="#special-offer">Offers</a></li>
-            <li><a href="#about">Artists</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h5>Support</h5>
-          <ul>
-            <li><a href="#">Help Center</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Contact Us</a></li>
-          </ul>
-        </div>
+          <div class="footer-nav-col">
+            <h5>About</h5>
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
       </div>
 
       <div class="footer-bottom">
@@ -1094,6 +1165,11 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
+
+  <!-- Toast (professional feedback for cart actions) -->
+  <div class="toast-sc" id="toastSc" aria-live="polite" aria-atomic="true" role="status">
+    <div class="toast-sc-body" id="toastScBody"></div>
+  </div>
 
   <script>
     //  TABS 
@@ -1126,54 +1202,296 @@
     });
 
     //  HAMBURGER 
-    // ===== HAMBURGER =====
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('navMenu');
-const navOverlay = document.getElementById('navOverlay');
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const navOverlay = document.getElementById('navOverlay');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('open');
-    navOverlay.classList.toggle('show');
-});
-
-navOverlay.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('open');
-    navOverlay.classList.remove('show');
-});
-
-window.addEventListener('scroll', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('open');
-    navOverlay.classList.remove('show');
-});
-
-// ===== MOBILE COLLECTIONS DROPDOWN TOGGLE =====
-document.querySelectorAll('.has-dropdown > a').forEach(link => {
-    link.addEventListener('click', function(e) {
-        if (window.innerWidth <= 768) {
-            e.preventDefault();
-            const parent = this.closest('.has-dropdown');
-            parent.classList.toggle('open');
-        }
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('open');
+      navOverlay.classList.toggle('show');
     });
-});
 
-    // Close menu on scroll
-    window.addEventListener('scroll', () => {
+    navOverlay.addEventListener('click', () => {
       hamburger.classList.remove('active');
       navMenu.classList.remove('open');
       navOverlay.classList.remove('show');
     });
 
-    //  CART 
-    const prices = { 1: 399, 2: 249 };
+    const siteHeader = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      if (siteHeader) siteHeader.classList.toggle('is-scrolled', window.scrollY > 16);
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('open');
+      navOverlay.classList.remove('show');
+    }, { passive: true });
+    if (siteHeader) siteHeader.classList.toggle('is-scrolled', window.scrollY > 16);
+
+    // ===== SCROLL REVEAL (animate sections as they enter viewport) =====
+    (function initScrollReveal() {
+      const targets = [
+        ".section-head",
+        ".pop-card",
+        ".best-selling-grid",
+        ".product-card",
+        ".offer-card",
+        ".about-grid",
+        ".contact-grid",
+        "#footer .footer-top",
+        "#footer .footer-bottom",
+        ".map-container"
+      ];
+
+      const els = Array.from(document.querySelectorAll(targets.join(",")));
+      els.forEach((el, idx) => {
+        if (!el.classList.contains("reveal")) el.classList.add("reveal");
+        // stagger only within the same parent group visually
+        el.style.setProperty("--d", `${Math.min(idx * 45, 520)}ms`);
+      });
+
+      if (!("IntersectionObserver" in window)) {
+        els.forEach((el) => el.classList.add("is-visible"));
+        return;
+      }
+
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            // Normal reveal
+            entry.target.classList.add("is-visible");
+            obs.unobserve(entry.target);
+
+            // ✅ Fix: ensure footer-bottom is revealed when footer-top becomes visible
+            // (prevents footer-bottom staying invisible due to size/threshold)
+            const footerTop = document.querySelector("#footer .footer-top");
+            const footerBottom = document.querySelector("#footer .footer-bottom");
+            if (footerTop && footerBottom && entry.target === footerTop) {
+              footerBottom.classList.add("is-visible");
+              obs.unobserve(footerBottom);
+            }
+          });
+        },
+        { root: null, threshold: 0.14, rootMargin: "0px 0px -12% 0px" }
+      );
+
+      els.forEach((el) => obs.observe(el));
+    })();
+    
+
+    // ===== MOBILE COLLECTIONS DROPDOWN TOGGLE =====
+    document.querySelectorAll('.has-dropdown > a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const parent = this.closest('.has-dropdown');
+          parent.classList.toggle('open');
+        }
+      });
+    });
+
+    //  CART
     let cart = JSON.parse(localStorage.getItem("cart")) || {};
+
+    // ===== PRODUCT DATA (auto-built from DOM; supports multiple images) =====
+    // Keep curated multi-image sets here (keyed by the main image src used in cards).
+    const multiImageSets = {
+      "images/POP (Plaster Of Paris)/Flower Stand.jpg": [
+        "images/POP (Plaster Of Paris)/Flower Stand.jpg",
+        "images/POP (Plaster Of Paris)/POP on Canvas (1).jpg",
+        "images/POP (Plaster Of Paris)/POP on Canvas (2).jpg",
+        "images/POP (Plaster Of Paris)/POP on Canvas (3).jpg"
+      ],
+      "images/POP (Plaster Of Paris)/Geometric Pots (1).jpg": [
+        "images/POP (Plaster Of Paris)/Geometric Pots (1).jpg",
+        "images/POP (Plaster Of Paris)/Geometric Pots (2).jpg",
+        "images/POP (Plaster Of Paris)/Geometric Pot with Tray.jpg"
+      ],
+      "images/Paper Clay/Bottle Flower Vase (1).jpg": [
+        "images/Paper Clay/Bottle Flower Vase (1).jpg",
+        "images/Paper Clay/Bottle Flower Vase (2).jpg",
+        "images/Paper Clay/Bottle Flower Vase (3).jpg"
+      ]
+    };
+
+    let products = {};
+
+    function normalizeSrc(src) {
+      if (!src) return "";
+      // Convert absolute URLs to relative paths when possible
+      try {
+        const u = new URL(src, window.location.href);
+        const path = u.pathname.replace(/^\//, "");
+        return decodeURIComponent(path);
+      } catch {
+        return src;
+      }
+    }
+
+    function parsePrice(text) {
+      if (!text) return 0;
+      const m = String(text).replace(/,/g, "").match(/(\d+(\.\d+)?)/);
+      return m ? Math.round(Number(m[1])) : 0;
+    }
+
+    function idFromString(str) {
+      // FNV-1a 32bit hash -> positive integer
+      let h = 0x811c9dc5;
+      for (let i = 0; i < str.length; i++) {
+        h ^= str.charCodeAt(i);
+        h = Math.imul(h, 0x01000193);
+      }
+      return (h >>> 0); // unsigned
+    }
+
+    /** Exactly four gallery slots per product: [main, extra1, extra2, extra3]. Use "" for slots you will fill later. */
+    function normalizeToFour(images) {
+      const src = Array.isArray(images) ? images.map((x) => (x && String(x).trim()) || "") : [];
+      const out = ["", "", "", ""];
+      for (let i = 0; i < 4; i++) out[i] = src[i] || "";
+      return out;
+    }
+
+    function upsertProduct(p) {
+      if (!p || !p.id) return;
+      const merged = { ...(products[p.id] || {}), ...p };
+      if (merged.images !== undefined) merged.images = normalizeToFour(merged.images);
+      products[p.id] = merged;
+    }
+
+    function wireAddButtons(tileEl, productId) {
+      const btns = tileEl.querySelectorAll(".card-add-btn, .add-btn, .btn-primary-sc");
+      btns.forEach((btn) => {
+        // Popular section uses quantity UI + existing onclick; don't override those
+        if (btn.classList.contains("add-btn")) return;
+        btn.removeAttribute("onclick");
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          add(productId);
+        });
+      });
+    }
+
+    function buildProductsCatalog() {
+      products = {};
+
+      // Keep existing fixed IDs for the Popular section quantity UI
+      upsertProduct({
+        id: 1,
+        name: "POP on Canvas",
+        price: 399,
+        desc: "A textured Plaster of Paris creation designed to brighten any corner.",
+        images: ["images/POP (Plaster Of Paris)/POP on Canvas (2).jpg"]
+      });
+      upsertProduct({
+        id: 2,
+        name: "Geometric Pots",
+        price: 249,
+        desc: "Clean lines, modern shapes — perfect for small plants or desk decor.",
+        images: multiImageSets["images/POP (Plaster Of Paris)/Geometric Pots (1).jpg"]
+      });
+      upsertProduct({
+        id: 3,
+        name: "Artistic Bottle",
+        price: 600,
+        desc: "A handcrafted bottle vase with expressive color and personality.",
+        images: multiImageSets["images/Paper Clay/Bottle Flower Vase (1).jpg"]
+      });
+
+      // Featured + Offers cards
+      const tiles = document.querySelectorAll(".product-card, .offer-card, .pop-card, .best-img-wrap");
+      tiles.forEach((tile) => {
+        // If it already has a numeric data-id (e.g., Popular cards and best seller), keep it.
+        const existingId = Number(tile.getAttribute("data-id"));
+        let img = tile.querySelector("img");
+        let imgSrc = normalizeSrc(img ? img.getAttribute("src") : "");
+
+        // Derive title and price from the card
+        const titleEl =
+          tile.querySelector("figcaption h4") ||
+          tile.querySelector(".pop-card-info h4") ||
+          tile.querySelector(".author-tag");
+        const title = titleEl ? titleEl.textContent.trim() : "Product";
+
+        const priceEl =
+          tile.querySelector(".item-price") ||
+          tile.querySelector(".pop-price") ||
+          tile.querySelector(".offer-price") ||
+          tile.querySelector(".best-price");
+        const price = parsePrice(priceEl ? priceEl.textContent : "");
+
+        // Use existing ids for 1..3 to keep other UI (qty, best seller) consistent
+        let id = Number.isFinite(existingId) && existingId > 0 ? existingId : 0;
+        if (!id) id = idFromString(`${imgSrc}|${title}`) || idFromString(imgSrc) || Date.now();
+
+        // Ensure DOM has the id (for quick view)
+        tile.setAttribute("data-id", String(id));
+
+        const images = multiImageSets[imgSrc] || (imgSrc ? [imgSrc] : []);
+        upsertProduct({
+          id,
+          name: title,
+          price,
+          desc: "Handmade with love by neurodiverse creators.",
+          images
+        });
+
+// Wire ALL add buttons (catalog rewires everything)
+        wireAddButtons(tile, id);
+
+// Fix legacy inline onclick → data-id on cards
+        tile.querySelectorAll("[onclick^='add(']").forEach((btn) => {
+          btn.removeAttribute("onclick");
+          btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            add(id);
+          });
+        });
+      });
+    }
+
+
+    buildProductsCatalog();
 
     function save() { localStorage.setItem("cart", JSON.stringify(cart)); }
 
+    function getProduct(id) {
+      const raw = products[id] || { id, name: `Item ${id}`, price: 0, images: ["", "", "", ""] };
+      return { ...raw, images: normalizeToFour(raw.images) };
+    }
+
+    function getProductPrice(id) {
+      const p = getProduct(id);
+      return typeof p.price === "number" ? p.price : 0;
+    }
+
+    function getProductThumb(id) {
+      const p = getProduct(id);
+      if (p && Array.isArray(p.images)) {
+        const first = p.images.find((s) => s && String(s).trim());
+        if (first) return first;
+      }
+      return "images/main-banner1.jpg";
+    }
+
+    // ===== TOAST (non-blocking feedback) =====
+    let toastTimer = null;
+    function showToast(message) {
+      const toast = document.getElementById("toastSc");
+      const body = document.getElementById("toastScBody");
+      if (!toast || !body) return;
+      body.textContent = message;
+      toast.classList.add("show");
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove("show"), 2400);
+    }
+
     function update(id, type) {
+      id = Number(id);
+      if (!Number.isFinite(id)) return;
       let qty = cart[id] || 0;
       if (type === "inc") qty++;
       if (type === "dec") qty--;
@@ -1184,25 +1502,30 @@ document.querySelectorAll('.has-dropdown > a').forEach(link => {
 
     function add(id) {
       update(id, "inc");
-      const qEl = document.getElementById("q-" + id);
-      const btnEl = document.querySelector(`[data-id="${id}"] .add-btn`);
-      if (qEl) qEl.style.display = "flex";
-      if (btnEl) btnEl.style.display = "none";
+      const p = getProduct(id);
+      showToast(`${p.name} added to bag`);
     }
 
-    function inc(id) { update(id, "inc"); }
+    function inc(id) {
+      update(id, "inc");
+      const p = getProduct(id);
+      showToast(`${p.name} quantity updated`);
+    }
 
     function dec(id) {
       update(id, "dec");
-      if (!cart[id]) {
-        const qEl = document.getElementById("q-" + id);
-        const btnEl = document.querySelector(`[data-id="${id}"] .add-btn`);
-        if (qEl) qEl.style.display = "none";
-        if (btnEl) btnEl.style.display = "inline-flex";
-      }
+      const p = getProduct(id);
+      showToast(cart[id] ? `${p.name} quantity updated` : `${p.name} removed from bag`);
     }
 
-    function removeItem(id) { delete cart[id]; save(); render(); sync(); }
+    function removeItem(id) {
+      const p = getProduct(id);
+      delete cart[id];
+      save();
+      render();
+      sync();
+      showToast(`${p.name} removed from bag`);
+    }
 
     function toggleCart() { document.getElementById("drawer").classList.toggle("open"); }
 
@@ -1211,9 +1534,29 @@ document.querySelectorAll('.has-dropdown > a').forEach(link => {
       let total = 0, count = 0;
       box.innerHTML = "";
       for (let id in cart) {
-        let qty = cart[id], price = prices[id] || 0;
+        const p = getProduct(id);
+        let qty = cart[id], price = getProductPrice(id);
         total += qty * price; count += qty;
-        box.innerHTML += `<div class="cart-item"><div><strong>Item ${id}</strong> × ${qty}<div class="cart-remove" onclick="removeItem(${id})"><i class="bi bi-trash3"></i> Remove</div></div><span>PKR ${qty * price}</span></div>`;
+        box.innerHTML += `
+          <div class="cart-item">
+            <div class="cart-item-left">
+              <div class="cart-item-thumb">
+                <img src="${getProductThumb(id)}" alt="${p.name}">
+              </div>
+              <div class="cart-item-meta">
+                <div class="cart-item-title">${p.name}</div>
+               <div class="cart-qty-ctrl">
+  <button onclick="dec(${id})" aria-label="Decrease quantity">−</button>
+  <span>${qty}</span>
+  <button onclick="inc(${id})" aria-label="Increase quantity">+</button>
+</div>
+<div class="cart-remove" onclick="removeItem(${id})"><i class="bi bi-trash3"></i> Remove</div>
+              </div>
+            </div>
+            <div class="cart-item-right">
+              <div class="cart-item-price">PKR ${qty * price}</div>
+            </div>
+          </div>`;
       }
       document.getElementById("total").innerText = total;
       document.getElementById("count").innerText = count;
@@ -1221,14 +1564,21 @@ document.querySelectorAll('.has-dropdown > a').forEach(link => {
     }
 
     function sync() {
-      for (let id in cart) {
-        const q = document.getElementById("q-" + id);
+      // Popular cards have quantity UI. Keep them in sync everywhere on the page.
+      document.querySelectorAll("[id^='q-']").forEach((qEl) => {
+        const id = Number(qEl.id.replace("q-", ""));
+        const qty = cart[id] || 0;
         const v = document.getElementById("val-" + id);
         const btn = document.querySelector(`[data-id="${id}"] .add-btn`);
-        if (q) q.style.display = "flex";
-        if (v) v.innerText = cart[id];
-        if (btn) btn.style.display = "none";
-      }
+        if (qty > 0) {
+          qEl.style.display = "flex";
+          if (v) v.innerText = qty;
+          if (btn) btn.style.display = "none";
+        } else {
+          qEl.style.display = "none";
+          if (btn) btn.style.display = "inline-flex";
+        }
+      });
     }
 
     function checkout() {
@@ -1287,12 +1637,192 @@ document.querySelectorAll('.has-dropdown > a').forEach(link => {
       document.getElementById("orderModal").style.display = "none";
     }
 
-    // function checkout() {
-    //   alert("Order placed successfully 🎉");
-    //   cart = {}; save(); render(); toggleCart();
-    // }
+    // ===== PRODUCT QUICK VIEW MODAL =====
+    let activeProductId = null;
+    let activeImageIdx = 0;
+    let activeGalleryImages = ["", "", "", ""];
 
-    // sync(); render();
+    function firstGallerySrc(imgs) {
+      const g = normalizeToFour(imgs);
+      const hit = g.find((s) => s && String(s).trim());
+      return hit || "images/main-banner1.jpg";
+    }
+
+    function revealProductExtraThumbs() {
+      const extra = document.getElementById("pmExtraThumbs");
+      const hint = document.getElementById("pmGalleryHint");
+      if (extra) extra.classList.remove("pm-extra-thumbs-hidden");
+      if (hint) hint.classList.add("pm-gallery-hint-hidden");
+    }
+
+    function wirePmMainReveal() {
+      const wrap = document.getElementById("pmMainWrap");
+      if (!wrap || wrap.dataset.revealWired === "1") return;
+      wrap.dataset.revealWired = "1";
+      wrap.addEventListener("click", (e) => {
+        e.preventDefault();
+        const extra = document.getElementById("pmExtraThumbs");
+        if (extra && extra.classList.contains("pm-extra-thumbs-hidden")) revealProductExtraThumbs();
+        else setActiveProductImage(0);
+      });
+      wrap.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          const extra = document.getElementById("pmExtraThumbs");
+          if (extra && extra.classList.contains("pm-extra-thumbs-hidden")) revealProductExtraThumbs();
+          else setActiveProductImage(0);
+        }
+      });
+    }
+
+    function openProductModal(productId) {
+      if (!products[productId]) return;
+      const p = getProduct(productId);
+
+      activeProductId = productId;
+      activeImageIdx = 0;
+      activeGalleryImages = normalizeToFour(p.images);
+
+      const modal = document.getElementById("productModal");
+      const mainImg = document.getElementById("pmMainImg");
+      const extraThumbs = document.getElementById("pmExtraThumbs");
+      const hint = document.getElementById("pmGalleryHint");
+      const title = document.getElementById("pmTitle");
+      const desc = document.getElementById("pmDesc");
+      const price = document.getElementById("pmPrice");
+      const addBtn = document.getElementById("pmAddBtn");
+
+      title.textContent = p.name;
+      desc.textContent = p.desc || "Handmade with love by neurodiverse creators.";
+      price.textContent = typeof p.price === "number" ? `PKR ${p.price}` : "PKR";
+
+      if (hint) {
+        hint.classList.remove("pm-gallery-hint-hidden");
+        hint.style.display = "";
+      }
+      if (extraThumbs) {
+        extraThumbs.classList.add("pm-extra-thumbs-hidden");
+        extraThumbs.innerHTML = "";
+        for (let idx = 1; idx <= 3; idx++) {
+          const src = activeGalleryImages[idx];
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "pm-thumb";
+          btn.setAttribute("aria-label", src ? `View image ${idx + 1}` : `Image ${idx + 1} — add path in catalog when ready`);
+          if (src) {
+            btn.innerHTML = `<img src="${src}" alt="${p.name} thumbnail ${idx + 1}" />`;
+            btn.addEventListener("click", () => setActiveProductImage(idx));
+          } else {
+            btn.classList.add("pm-thumb-empty");
+            btn.disabled = true;
+            btn.setAttribute("aria-disabled", "true");
+          }
+          extraThumbs.appendChild(btn);
+        }
+      }
+
+      wirePmMainReveal();
+
+      mainImg.src = firstGallerySrc(activeGalleryImages);
+      mainImg.alt = p.name;
+      syncExtraThumbActiveState();
+
+      // Add-to-bag action
+      addBtn.onclick = () => {
+        add(productId);
+        closeProductModal();
+      };
+
+      // Show modal
+      modal.style.display = "flex";
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+      setTimeout(() => addBtn.focus(), 0);
+    }
+
+    function syncExtraThumbActiveState() {
+      document.querySelectorAll("#pmExtraThumbs .pm-thumb").forEach((t, i) => {
+        const idx = i + 1;
+        t.classList.toggle("active", idx === activeImageIdx);
+      });
+    }
+
+    function setActiveProductImage(idx) {
+      if (!Number.isFinite(idx) || idx < 0 || idx > 3) return;
+      let src = activeGalleryImages[idx];
+      if (!src || !String(src).trim()) {
+        if (idx !== 0) return;
+        src = firstGallerySrc(activeGalleryImages);
+      }
+      activeImageIdx = idx;
+      const mainImg = document.getElementById("pmMainImg");
+      const p = getProduct(activeProductId);
+      mainImg.src = src;
+      if (p) mainImg.alt = p.name;
+      syncExtraThumbActiveState();
+    }
+
+    function closeProductModal() {
+      const modal = document.getElementById("productModal");
+      modal.style.display = "none";
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+      activeProductId = null;
+      activeImageIdx = 0;
+      activeGalleryImages = ["", "", "", ""];
+    }
+
+    // Open modal by clicking on product cards (but not on add buttons)
+    document.addEventListener("click", (e) => {
+      const isAdd =
+        e.target.closest(".add-btn") ||
+        e.target.closest(".card-add-btn") ||
+        e.target.closest(".quantity") ||
+        e.target.closest(".cart-btn") ||
+        e.target.closest(".btn-primary-sc");
+      if (isAdd) return;
+
+      const card = e.target.closest(".product-card[data-id], .pop-card[data-id], .best-img-wrap[data-id]");
+      if (!card) return;
+
+      const id = Number(card.getAttribute("data-id"));
+      if (!Number.isFinite(id)) return;
+
+      openProductModal(id);
+    });
+
+    // Keyboard open for best seller image (Enter/Space)
+    document.querySelectorAll(".best-img-wrap[data-id]").forEach((el) => {
+      el.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          const id = Number(el.getAttribute("data-id"));
+          if (Number.isFinite(id)) openProductModal(id);
+        }
+      });
+    });
+
+    // Close on backdrop click + ESC
+    document.getElementById("productModal").addEventListener("click", (e) => {
+      if (e.target.id === "productModal") closeProductModal();
+    });
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        const pm = document.getElementById("productModal");
+        if (pm && pm.style.display === "flex") closeProductModal();
+      }
+      if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+        if (!activeProductId) return;
+        const filled = [0, 1, 2, 3].filter((i) => activeGalleryImages[i] && String(activeGalleryImages[i]).trim());
+        if (filled.length < 2) return;
+        const pos = filled.indexOf(activeImageIdx);
+        const nextPos =
+          e.key === "ArrowRight"
+            ? (pos + 1) % filled.length
+            : (pos - 1 + filled.length) % filled.length;
+        setActiveProductImage(filled[nextPos]);
+      }
+    });
 
     //  SLICK SLIDER (if available) 
     if (typeof $ !== 'undefined' && $.fn.slick) {
@@ -1301,6 +1831,7 @@ document.querySelectorAll('.has-dropdown > a').forEach(link => {
         prevArrow: '.slider-btn.prev', nextArrow: '.slider-btn.next', fade: true
       });
     }
+    
   </script>
 
 </body>
